@@ -1,0 +1,41 @@
+﻿<!--16.08.30-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--16.08.30-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    
+    <title>HiddenBlog - @ViewBag.Title</title>
+</head>
+<body>
+    <!--16.08.30-->
+    <!--<header></header>-->
+    <!--nav-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Blog' Hidden</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><button type="button" class="btn btn-default navbar-btn navbar-left">Home</button>&nbsp;</li>
+                    <li><button type="button" class="btn btn-default navbar-btn navbar-left">Study</button>&nbsp;</li>
+                    <li><button type="button" class="btn btn-default navbar-btn navbar-left">Gallery</button>&nbsp;</li>
+                    <li><button type="button" class="btn btn-default navbar-btn navbar-left">Board</button>&nbsp;</li>
+                </ul>
+                <button type="button" class="btn btn-default navbar-btn navbar-right">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <!--section, article-->
+    <section><article>@RenderBody()</article></section>
+    <!--footer-->
+    <hr />
+    <footer class="home_footer">copyright(c) 2016 All rights reserved by zugi</footer>
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</body>
+</html>

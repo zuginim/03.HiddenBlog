@@ -1,0 +1,8 @@
+﻿/*16.08.30 HomeLayout*/
+body { 
+    padding-top: 50px; padding-top: 70px;
+}
+.home_footer {
+    color:darkgray; text-align:center; font-weight:normal;
+    font-family:'Javanese Text';
+}
