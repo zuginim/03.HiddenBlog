@@ -1,0 +1,19 @@
+﻿@model HiddenBlog.Models.User
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_SignUpLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <p class="text-danger">@Html.Encode(ViewBag.Error)</p>
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <p>ID: @Html.EditorFor(i => i.ID, new { htmlAttributes = new { @class = "form-control" } })</p>
+    <p>Name: @Html.EditorFor(i => i.Name, new { htmlAttributes = new { @class = "form-control" } })</p>
+    <p>Password: @Html.EditorFor(i => i.Password, new { htmlAttributes = new { @class = "form-control" } })</p>
+    <p>Email: @Html.EditorFor(i => i.Email, new { htmlAttributes = new { @class = "form-control" } })</p>
+    <input type="submit" value="Create" class="btn btn-default" />
+    <p class="btn btn-default">@Html.ActionLink("Return", "Index")</p>   
+}
+
