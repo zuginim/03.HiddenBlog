@@ -1,0 +1,19 @@
+﻿@model HiddenBlog.Models.User
+
+@{
+    ViewBag.Title = "AdminMainBanner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="panel panel-default">
+        <div class="panel-heading" for="file">Upload_File Select..</div>
+        <div class="panel-body"><!--이미지 들어가는 곳.--></div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><input type="file" name="file" id="file" /></li>
+                    <li class="list-group-item"><input type="submit" /></li>
+                </ul>
+            </div>
+    </div>
+</form>

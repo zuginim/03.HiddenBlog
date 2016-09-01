@@ -8,19 +8,22 @@ using System.Web;
 using System.Web.Mvc;
 using HiddenBlog.Context;
 using HiddenBlog.Models;
+using System.IO;
 
 namespace HiddenBlog.Controllers
 {
     public class HomeController : Controller
     {
         private UserContext db = new UserContext();
+        private MainBannerContext db2 = new MainBannerContext();
 
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Admin() {
+        public ActionResult Admin()
+        {
             return View(db.Users.ToList());
         }
 
@@ -51,7 +54,7 @@ namespace HiddenBlog.Controllers
             db.SaveChanges();
             return RedirectToAction("Admin", "Home");
         }
-        
+
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -73,6 +76,31 @@ namespace HiddenBlog.Controllers
             db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Admin", "Home");
+        }
+
+        [HttpGet]
+        public ActionResult AdminMainBanner()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AdminMainBanner(HttpPostedFileBase file)
+        {
+            if (file.ContentLength > 0)
+            {
+                var fileName = Path.GetFileName(file.FileName);
+                var path = Path.Combine(Server.MapPath("~/App_Data/UploadImages"), fileName);
+                
+                MainBanner newBanner = new MainBanner();
+                newBanner.Name = fileName;
+                newBanner.Path = path;
+                db2.MainBanners.Add(newBanner);
+                db2.SaveChanges();
+               
+                file.SaveAs(path);
+            }
+            return RedirectToAction("AdminMainBanner", "Home");
         }
     }
 }

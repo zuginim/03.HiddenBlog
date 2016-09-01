@@ -7,8 +7,8 @@ using System.Data.Entity;
 
 namespace HiddenBlog.Context
 {
-    public class UserContext : DbContext
+    public class MainBannerContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<MainBanner> MainBanners { get; set; }
     }
 }
