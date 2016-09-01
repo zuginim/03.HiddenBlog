@@ -7,7 +7,7 @@
     <!--16.08.30-->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/Home.css" rel="stylesheet" />
-    
+
     <title>HiddenBlog - @ViewBag.Title</title>
 </head>
 <body>
@@ -34,7 +34,31 @@
         </div>
     </nav>
     <!--section, article-->
-    <section><article>@RenderBody()</article></section>
+
+    <div class="container">
+        <section class="row-fluid">
+            <div class="row">
+                <aside class="col-xs-2">
+                    <div class="btn-group-vertical" role="group" aria-label="...">
+                        <div class="list-group">
+                            <a href="~/Home/Admin" class="list-group-item">UserControll</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                            <a href="#" class="list-group-item">-Empty-</a>
+                        </div>
+                    </div>
+                </aside>
+                <article class="col-xs-10">@RenderBody()</article>
+            </div>
+        </section>
+    </div>
     <!--footer-->
     <hr />
     <footer class="home_footer">copyright(c) 2016 All rights reserved by zugi</footer>

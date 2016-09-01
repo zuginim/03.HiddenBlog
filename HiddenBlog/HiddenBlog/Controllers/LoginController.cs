@@ -13,17 +13,14 @@ namespace HiddenBlog.Controllers
 {
     public class LoginController : Controller
     {
-        //16.08.30
         private UserContext db = new UserContext();
-
-        //16.08.30
+        
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-
-        //16.08.30
+        
         [HttpPost]
         public ActionResult Index(User user)
         {
@@ -45,15 +42,13 @@ namespace HiddenBlog.Controllers
                 return View();
             }
         }
-
-        //16.08.30
+        
         [HttpGet]
         public ActionResult SignUp()
         {
             return View();
         }
 
-        //16.08.30
         [HttpPost]
         public ActionResult SignUp([Bind(Include = "ID,Name,Password,Email")] User user)
         {
@@ -76,6 +71,10 @@ namespace HiddenBlog.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult Logout() {
+            return RedirectToAction("Index", "Login");
         }
     }
 }

@@ -6,3 +6,6 @@ body {
     color:darkgray; text-align:center; font-weight:normal;
     font-family:'Javanese Text';
 }
+button {
+    margin-left:5px;
+}
