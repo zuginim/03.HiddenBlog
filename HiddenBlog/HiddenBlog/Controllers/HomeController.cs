@@ -81,6 +81,15 @@ namespace HiddenBlog.Controllers
         [HttpGet]
         public ActionResult AdminMainBanner()
         {
+            //16.09.01
+            MainBanner test = (MainBanner) db2.MainBanners.Where(p => p.Name == "msdds.dll").FirstOrDefault();
+            //var test2 = from testt in db2.MainBanners
+            //            where testt.Name == "msdds.dll"
+            //            select testt;
+
+
+
+           // ViewBag.test = test2;
             return View();
         }
 
